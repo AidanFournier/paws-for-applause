@@ -1,0 +1,13 @@
+[
+    {
+      "name": "Rupert",
+      "age": 8,
+      "sex": "male",
+      "breed": "Ginger",
+      "disposition": ["Will scratch humans", "friendly with other cats"],
+      "favouiteFood": "Ciao wet food",
+      "medicalHistory": ["FIV+", "recent eye infection"],
+      "vaccinations": "Up to date",
+      "neutered": true
+    }
+]
