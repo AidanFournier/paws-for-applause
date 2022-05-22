@@ -4,10 +4,54 @@
       "age": 8,
       "sex": "male",
       "breed": "Ginger",
-      "disposition": ["Will scratch humans", "friendly with other cats"],
+      "disposition": ["will scratch humans", "friendly with other cats"],
       "favouiteFood": "Ciao wet food",
       "medicalHistory": ["FIV+", "recent eye infection"],
       "vaccinations": "Up to date",
       "neutered": true
-    }
+    },
+    {
+        "name": "Rohan",
+        "age": 1,
+        "sex": "male",
+        "breed": "Unknown",
+        "disposition": ["very friendly", "friendly with other cats", "loves belly rubs", "eager eater"],
+        "favouiteFood": "Churu",
+        "medicalHistory": false,
+        "vaccinations": "Up to date",
+        "neutered": true
+      },
+      {
+        "name": "Ginger",
+        "age": 6,
+        "sex": "female",
+        "breed": "Ginger calico",
+        "disposition": ["shy", "allows head pets"],
+        "favouiteFood": "Dry food",
+        "medicalHistory": ["recent eye infection"],
+        "vaccinations": "Up to date",
+        "neutered": true
+      },
+      {
+        "name": "Pace",
+        "age": 0.6,
+        "sex": "female",
+        "breed": "Brown calico",
+        "disposition": ["loves pets", "vocal", "friendly with other cats"],
+        "favouiteFood": "Chicken breast meat sticks",
+        "medicalHistory": ["unidentified stomach issues", "recent exploratory surgery", "daily vomiting", "underweight"],
+        "vaccinations": "Up to date",
+        "neutered": false
+      },
+      {
+        "name": "Bueno",
+        "age": 1,
+        "sex": "male",
+        "breed": "Ginger",
+        "disposition": ["shy", "will scratch"],
+        "favouiteFood": "Ciao wet food",
+        "medicalHistory": ["recent dental surgery", "minited mobility with legs"],
+        "vaccinations": "Up to date",
+        "neutered": true
+      }
 ]
