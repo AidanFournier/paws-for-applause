@@ -8,7 +8,8 @@
       "favouiteFood": "Ciao wet food",
       "medicalHistory": ["FIV+", "recent eye infection"],
       "vaccinations": "Up to date",
-      "neutered": true
+      "neutered": true,
+      "images": []
     },
     {
         "name": "Rohan",
@@ -19,7 +20,8 @@
         "favouiteFood": "Churu",
         "medicalHistory": false,
         "vaccinations": "Up to date",
-        "neutered": true
+        "neutered": true,
+        "images": []
       },
       {
         "name": "Ginger",
@@ -30,7 +32,8 @@
         "favouiteFood": "Dry food",
         "medicalHistory": ["recent eye infection"],
         "vaccinations": "Up to date",
-        "neutered": true
+        "neutered": true,
+        "images": []
       },
       {
         "name": "Pace",
@@ -41,7 +44,8 @@
         "favouiteFood": "Chicken breast meat sticks",
         "medicalHistory": ["unidentified stomach issues", "recent exploratory surgery", "daily vomiting", "underweight"],
         "vaccinations": "Up to date",
-        "neutered": false
+        "neutered": false,
+        "images": []
       },
       {
         "name": "Bueno",
@@ -52,6 +56,7 @@
         "favouiteFood": "Ciao wet food",
         "medicalHistory": ["recent dental surgery", "minited mobility with legs"],
         "vaccinations": "Up to date",
-        "neutered": true
+        "neutered": true,
+        "images": []
       }
 ]
