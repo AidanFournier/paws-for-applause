@@ -22,6 +22,10 @@ const petSchema = new mongoose.Schema({
         type: String,
         required: [true, 'A pet must have a name']
     },
+    species: {
+        type: String,
+        required: [true, 'Must specify the species of pet']
+    },
     sex: {
         type: String,
         required: [true, 'A pet must have a sex']
@@ -34,7 +38,22 @@ const petSchema = new mongoose.Schema({
         type: String
     }
 });
+
 const Pet = mongoose.model('Pet', petSchema);
+
+const testPet = new Pet({
+    name: 'Rupert',
+    species: 'Cat',
+    sex: 'male',
+    age: 7,
+    breed: 'Calico'
+});
+
+testPet.save().then(doc => {
+    console.log(doc);
+}).catch(err => {
+    console.log('Error 👹 :', err);
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
