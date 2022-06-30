@@ -4,7 +4,6 @@ const petController = require('./../controllers/petController');
 // Routes:
 const router = express.Router();
 
-router.param('id', petController.checkID);
 
 router
     .route('/')
