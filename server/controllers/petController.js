@@ -1,18 +1,4 @@
-const fs = require('fs');
-
-const pets = JSON.parse(
-    fs.readFileSync(`${__dirname}/../dev-data/data/pets.json`)
-);
-
-exports.checkID = (req, res, next, val) => {
-    if(req.params.id * 1 > pets.length) {
-        return res.status(404).json({
-            status: 'fail',
-            message: 'Invalid ID'
-        });
-    }
-    next();
-}
+const Pet = require('../models/petModel');
 
 exports.checkBody = (req, res, next) => {
     if (!req.body.name || !req.body.age) {
@@ -30,10 +16,10 @@ exports.getAllPets = (req, res) => {
     res.status(200).json({
         status: 'success',
         requestedAt: req.requestTtime,
-        results: pets.length,
-        data: {
-            pets
-        }
+        // results: pets.length,
+        // data: {
+        //     pets
+        // }
     })
 };
 
@@ -41,31 +27,22 @@ exports.getPet = (req, res) => {
     console.log(req.params);
     const id = req.params.id * 1;
 
-    const pet = pets.find(el => el.id === id)
+    // const pet = pets.find(el => el.id === id)
  
-    res.status(200).json({
-        status: 'success',
-        data: {
-            pet
-        }
-    })
+    // res.status(200).json({
+    //     status: 'success',
+    //     data: {
+    //         pet
+    //     }
+    // })
 };
 
 exports.createPet = (req, res) => {
-    const newId = pets[pets.length -1].id + 1;
-    const newPet = Object.assign({id: newId}, req.body);
-
-   pets.push(newPet);
-
-    fs.writeFile(`${__dirname}/dev-data/data/pets.json`,
-        JSON.stringify(pets), 
-        err => {
-            res.status(201).json({
-                status: 'success',
-                data: {
-                    pet: newPet
-                }
-            });
+    res.status(201).json({
+        status: 'success',
+        // data: {
+        //     pet: newPet
+        // }
     });
 };
 
