@@ -8,7 +8,7 @@ const router = express.Router();
 router
     .route('/')
     .get(petController.getAllPets)
-    .post(petController.checkBody, petController.createPet);
+    .post(petController.createPet);
 
 router
     .route('/:id')
