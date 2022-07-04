@@ -37,13 +37,23 @@ exports.getPet = (req, res) => {
     // })
 };
 
-exports.createPet = (req, res) => {
-    res.status(201).json({
-        status: 'success',
-        // data: {
-        //     pet: newPet
-        // }
-    });
+exports.createPet = async (req, res) => {
+    try {
+    
+        const newPet = await Pet.create(req.body);
+
+        res.status(201).json({
+            status: 'success',
+            data: {
+                pet: newPet
+            }
+        });
+    } catch (err) {
+        res.status(400).json({
+            status: 'fail',
+            message: 'Invalid data sent!'
+        })
+    };
 };
 
 exports.updatePet = (req, res) => {
