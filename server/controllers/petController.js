@@ -11,30 +11,41 @@ exports.checkBody = (req, res, next) => {
 }
 
 // Route handlers/controllers:
-exports.getAllPets = (req, res) => {
-    console.log(req.requestTtime);
-    res.status(200).json({
-        status: 'success',
-        requestedAt: req.requestTtime,
-        // results: pets.length,
-        // data: {
-        //     pets
-        // }
-    })
+exports.getAllPets = async (req, res) => {
+    try {
+        const pets = await Pet.find();
+
+        res.status(200).json({
+            status: 'success',
+            results: pets.length,
+            data: {
+                pets
+            }
+        });
+    } catch (err) {
+        res.status(404).json({
+            status: "fail",
+            message: err
+        });
+    }
 };
 
-exports.getPet = (req, res) => {
-    console.log(req.params);
-    const id = req.params.id * 1;
+exports.getPet = async (req, res) => {
+    try {
+        const pet = await Pet.findById(req.params.id);
 
-    // const pet = pets.find(el => el.id === id)
- 
-    // res.status(200).json({
-    //     status: 'success',
-    //     data: {
-    //         pet
-    //     }
-    // })
+        res.status(200).json({
+            status: 'success',
+            data: {
+                pet
+            }
+        });
+    } catch (err) {
+        res.status(404).json({
+            status: "fail",
+            message: fail
+        });
+    }
 };
 
 exports.createPet = async (req, res) => {
