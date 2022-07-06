@@ -43,7 +43,7 @@ exports.getPet = async (req, res) => {
     } catch (err) {
         res.status(404).json({
             status: "fail",
-            message: fail
+            message: err
         });
     }
 };
@@ -67,13 +67,25 @@ exports.createPet = async (req, res) => {
     };
 };
 
-exports.updatePet = (req, res) => {
-    res.status(200).json({
-        status: "success",
-        data: {
-            pet: '<Updated pet here...>'
-        }
-    })
+exports.updatePet = async (req, res) => {
+    try {
+        const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+            runValidators: true
+        });
+
+        res.status(200).json({
+            status: "success",
+            data: {
+                pet: '<Updated pet here...>'
+            }
+        });
+    } catch (err) {
+        res.status(404).json({
+            status: "fail",
+            message: err
+        });
+    }
 };
 
 exports.deletePet = (req, res) => {
