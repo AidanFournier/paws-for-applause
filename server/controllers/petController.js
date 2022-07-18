@@ -13,7 +13,12 @@ exports.checkBody = (req, res, next) => {
 // Route handlers/controllers:
 exports.getAllPets = async (req, res) => {
     try {
-        const pets = await Pet.find();
+        const queryObj = {...req.query};
+        const excludedFields = ['page', 'sort', 'limit', 'fields'];
+        excludedFields.forEach(field => delete queryObj[field]);
+
+        const query = Pet.find(queryObj);
+        const pets = await query;
 
         res.status(200).json({
             status: 'success',
